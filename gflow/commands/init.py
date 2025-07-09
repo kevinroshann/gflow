@@ -21,9 +21,9 @@ def ginit(repo_url: str = typer.Argument(..., help="Remote repository URL")):
     run("git add .")
 
     typer.echo("📝 Committing with message: 'Initial commit'")
-    run('git commit -m "Initial commit"')
+    # run('git commit -m "Initial commit"')
 
     typer.echo("🚀 Pushing to origin main with upstream set...")
-    run("git push -u origin main")
+    # run("git push -u origin main")
 
     typer.secho("✅ Repository initialized and pushed successfully!", fg=typer.colors.GREEN)
