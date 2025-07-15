@@ -1,21 +1,21 @@
 import typer
-from gflow.commands import init,ssh_setup,gpush  # This is the module, not the function
-from gflow.commands import gnew_branch
-from gflow.commands import gfix_push
-app = typer.Typer()
+from gflow.commands import (
+     gpush,
+    gnew_branch, gfix_push,
+    greset_hard, gclone_setup,
+    ginit_template
+)
+
+app = typer.Typer(help="⚡ Simplify Git workflows with one-liner automations.")
+
+# app.command()(ginit.ginit)
+# app.command()(gssh_setup.gssh_setup)
 app.command()(gpush.gpush)
-
-app.command()(gfix_push.gfix_push)
-
 app.command()(gnew_branch.gnew_branch)
-
-app.command()(ssh_setup.gssh_setup)
-
-# Register the `init.app` sub-app with the command name `ginit`
-app.add_typer(init.app, name="ginit")
-
-def run():
-    app()
+app.command()(gfix_push.gfix_push)
+app.command()(greset_hard.greset_hard)
+app.command()(gclone_setup.gclone_setup)
+app.command()(ginit_template.ginit_template)
 
 if __name__ == "__main__":
-    run()
+    app()

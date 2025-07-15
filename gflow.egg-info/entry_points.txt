@@ -1,0 +1,2 @@
+[console_scripts]
+gflow = gflow.main:app
